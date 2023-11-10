@@ -350,9 +350,6 @@ const sliderMethods = new Swiper(".slider-methods-list", {
 	},
 });
 
-document.querySelector(".slide-init").addEventListener("click", () => {
-	sliderMethods.init();
-});
 document.querySelector(".slide-to").addEventListener("click", () => {
 	sliderMethods.slideTo(4);
 });
@@ -372,3 +369,18 @@ sliderMethods.on('transitionEnd', () => {
 	console.log('Current index: ' + sliderMethods.realIndex);
 });
 // === end SLIDER OWN CLASS
+
+// === SLIDER WITH SAME CLASSES
+const slidersSame = document.querySelectorAll(".slider-same-list");
+slidersSame.forEach((el) => {
+	let slidersSameItem = new Swiper(el, {
+		loop: true,
+		slidesPerView: 1,
+
+		navigation: {
+			nextEl: el.querySelector(".slider-same-button-next"),
+			prevEl: el.querySelector(".slider-same-button-prev"),
+		},
+	})
+});
+// === end SLIDER WITH SAME CLASSES
