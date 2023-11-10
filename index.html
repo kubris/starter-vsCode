@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Start Template</title>
+		<link rel="stylesheet" href="assets/css/style.min.css" />
+	</head>
+	<body>
+		<div class="container">
+			<h1>Header H1</h1>
+			<h2>Header H2</h2>
+			<h3>Header H3</h3>
+			<br />
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, aperiam nisi. Cumque, odit? Illum, alias natus fuga fugit provident ducimus.</p>
+			<br />
+			<div class="checkbox">
+				<label>
+					<input class="checkbox-real" type="checkbox" />
+					<span class="checkbox-custom"></span>
+					Checkbox default
+				</label>
+
+				<label>
+					<input class="checkbox-real" type="checkbox" checked />
+					<span class="checkbox-custom"></span>
+					Checkbox checked
+				</label>
+
+				<label>
+					<input class="checkbox-real" type="checkbox" disabled />
+					<span class="checkbox-custom"></span>
+					Checkbox disabled
+				</label>
+			</div>
+
+			<div class="radio">
+				<label>
+					<input class="radio-real" type="radio" name="radio" />
+					<span class="radio-custom"></span>
+					Radio default
+				</label>
+
+				<label>
+					<input class="radio-real" type="radio" name="radio" checked />
+					<span class="radio-custom"></span>
+					Radio checked
+				</label>
+
+				<label>
+					<input class="radio-real" type="radio" name="radio" disabled />
+					<span class="radio-custom"></span>
+					Radio disabled
+				</label>
+			</div>
+
+			<div class="form-fields">
+				<input type="text" placeholder="Your text..." />
+				<textarea placeholder="Here your text..."></textarea>
+			</div>
+			<br />
+			<div class="form-fields">
+				<div class="select">
+					<select class="select-field" name="select">
+						<option value="1">Default Select</option>
+						<option value="2">Select 2</option>
+						<option value="3">Select 3</option>
+					</select>
+				</div>
+
+				<div class="select-custom">
+					<button class="select-custom__field">Custom Select</button>
+					<ul class="select-custom__list">
+						<li class="select-custom__list-item" data-value="sel1">Custom Select</li>
+						<li class="select-custom__list-item" data-value="sel2">Custom Select I</li>
+						<li class="select-custom__list-item" data-value="sel3">Custom Select II</li>
+						<li class="select-custom__list-item" data-value="sel4">Custom Select III</li>
+					</ul>
+					<input class="select-custom__value" type="text" name="select-value" value="" />
+				</div>
+
+				<div class="select-custom">
+					<button class="select-custom__field">Custom Select 2</button>
+					<ul class="select-custom__list">
+						<li class="select-custom__list-item" data-value="sel2-1">Custom Select 2</li>
+						<li class="select-custom__list-item" data-value="sel2-2">Custom Select 2-I</li>
+						<li class="select-custom__list-item" data-value="sel2-3">Custom Select 2-II</li>
+						<li class="select-custom__list-item" data-value="sel2-4">Custom Select 2-III</li>
+					</ul>
+					<input class="select-custom__value" type="text" name="select-value" value="" />
+				</div>
+			</div>
+
+			<div class="range">
+				<div class="range-slider">
+					<div class="progress"></div>
+				</div>
+
+				<div class="range-input">
+					<input type="range" class="range-min" min="0" max="10000" value="2500" step="10" />
+					<input type="range" class="range-max" min="0" max="10000" value="7500" step="10" />
+				</div>
+
+				<div class="range-price">
+					<div class="field">
+						<span>Min</span>
+						<input class="input-min" type="number" value="2500" step="10" />
+					</div>
+					<div class="separator">–</div>
+					<div class="field">
+						<span>Max</span>
+						<input class="input-max" type="number" value="7500" step="10" />
+					</div>
+				</div>
+			</div>
+
+			<form class="switchbox-form">
+				<p class="switchbox">
+					<label class="switchbox-btn">
+						<input type="checkbox" />
+						<span class="switchbox-switch"></span>
+					</label>
+					Checkbox-1
+				</p>
+				<p class="switchbox">
+					<label class="switchbox-btn">
+						<input type="checkbox" checked />
+						<span class="switchbox-switch"></span>
+					</label>
+					Checkbox-2
+				</p>
+				<p class="switchbox">
+					<label class="switchbox-btn">
+						<input type="checkbox" disabled />
+						<span class="switchbox-switch"></span>
+					</label>
+					Checkbox-3
+				</p>
+				<p class="switchbox">
+					<label class="switchbox-btn">
+						<input type="checkbox" checked disabled />
+						<span class="switchbox-switch"></span>
+					</label>
+					Checkbox-4
+				</p>
+			</form>
+
+			<div class="tabs">
+				<div class="tabs-tags" >
+					<span class="tabs-tags__tag">Один</span>
+					<span class="tabs-tags__tag">Два</span>
+					<span class="tabs-tags__tag">Три</span>
+				</div>
+				<div class="tabs-content">
+					<div class="tabs-content__text">Один контент</div>
+					<div class="tabs-content__text">Два контент</div>
+					<div class="tabs-content__text">Три контент</div>
+				</div>				
+			</div>
+
+			<div class="select__block">
+				<ul class="drop-list">
+					<li>
+						<input class="drop-input" value="" placeholder="Select an element" readonly>
+						<i></i>
+						<ul class="drop-sublist">
+							<li>Item I</li>
+							<li>Item II</li>
+							<li>Item III</li>
+						</ul>
+					</li>
+				</ul>
+				
+				<ul class="drop-list">
+					<li>
+						<input class="drop-input" value="" placeholder="Select an element" readonly>
+						<i></i>
+						<ul class="drop-sublist">
+							<li>Item I</li>
+							<li>Item II</li>
+							<li>Item III</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+
+		<footer class="footer">
+			<div class="container">				
+				<a href="https://swiperjs.com/get-started" target="_blank">
+					Swiper slider
+				</a>
+			</div>
+		</footer>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="assets/js/script.js"></script>
+	</body>
+</html>

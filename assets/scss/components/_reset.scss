@@ -1,0 +1,111 @@
+/* === reset === */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;	
+}
+
+body {
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+
+input {
+	border: none;	
+}
+textarea {
+	resize: none;
+}
+
+input,
+button,
+a,
+select,
+option,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	outline: none;
+}
+
+input:focus,
+button:focus,
+a:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+}
+
+a,
+button,
+label {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	font-family: inherit;
+	color: inherit;
+	font-size: inherit;
+	line-height: inherit;
+	background-color: inherit;
+}
+
+a {
+	outline: none;
+	text-decoration: none;
+	touch-action: manipulation;
+}
+
+a:focus {
+	outline: none;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible {
+	outline: none;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+table {
+	font-variant-numeric: tabular-nums;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+picture {
+	display: block;
+	line-height: 0;
+}
+
+img,
+svg {
+	height: auto;
+	max-width: 100%;
+}
+/* === //reset === */

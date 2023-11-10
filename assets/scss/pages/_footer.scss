@@ -1,0 +1,37 @@
+/* --- footer --- */
+.footer {
+	margin-top: auto;
+	background-color: #222;
+	text-align: center;
+
+	a {
+		position: relative;
+		display: inline-block;
+		padding: 35px 0;
+		color: #fff;
+		font-weight: 600;
+		text-transform: uppercase;
+		
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: 30px;
+			left: 0;
+			background-color: #fff;
+			height: 2px;
+			width: 100%;
+		}
+
+		&:hover::after {
+			animation: underLine 1s infinite;
+		}
+	}
+}
+
+@keyframes underLine {
+	0% { left:0; width: 100%; }
+	50% { left:50%; width: 0; background-color: limegreen;}
+	100% { left:0; width: 100%; }
+  }
+  
+/* --- // footer --- */

@@ -1,0 +1,19 @@
+// body { @include mxw1440 { font-size: 14px } @include mxw1024 { font-size: 12px }}
+
+@mixin mxw1670 {
+  @media (max-width: (1670px)) {
+    @content;
+  }
+}
+
+@mixin mxw1270 {
+  @media (max-width: (1240px)) {
+    @content;
+  }
+}
+
+@mixin mxw678 {
+  @media (max-width: (648px)) {
+    @content;
+  }
+}
