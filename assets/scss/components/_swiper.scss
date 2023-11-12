@@ -895,7 +895,7 @@
 		color: #fff;
 		max-width: 1200px;
 
-		h2 {			
+		h2 {
 			margin-bottom: 30px;
 			color: #fff;
 		}
@@ -951,7 +951,8 @@
 }
 // --- end Slider on bg with fade effect
 
-// --- Slider
+// --- Slider mobile
+
 .slider-mobile {
 	margin: 50px auto;
 	max-width: 1140px;
@@ -965,7 +966,7 @@
 		display: flex;
 		flex-wrap: wrap;
 
-		@include mxw678 { 
+		@include mxw678 {
 			flex-wrap: initial;
 		}
 	}
@@ -984,7 +985,7 @@
 		flex-shrink: 0;
 		width: 25%;
 
-		@include mxw678 { 
+		@include mxw678 {
 			padding: 0;
 			width: 100%;
 		}
@@ -995,3 +996,4 @@
 		}
 	}
 }
+// --- end Slider mobile
