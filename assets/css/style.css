@@ -698,13 +698,20 @@ select:hover {
   gap: 30px;
 }
 
+.drop {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+  padding: 20px 0 40px;
+}
 .drop-list {
   position: relative;
   width: 100%;
   max-width: 350px;
   background: #fff;
 }
-
 .drop-input {
   position: relative;
   display: block;
@@ -720,7 +727,6 @@ select:hover {
   transition: all 0.2s ease-out;
   z-index: 1;
 }
-
 .drop-input + i {
   content: "";
   position: absolute;
@@ -737,13 +743,10 @@ select:hover {
   pointer-events: none;
   z-index: 1;
 }
-
-.turn.drop-input + i {
+.drop-input.turn + i {
   border-width: 0 8px 8px 8px;
   border-color: transparent transparent #008095 transparent;
 }
-
-/* ======= submenu ======== */
 .drop-sublist {
   display: none;
   position: absolute;
@@ -754,11 +757,9 @@ select:hover {
   border: 2px solid #7e9bbd;
   z-index: 10;
 }
-
 .drop-sublist.open {
   display: block;
 }
-
 .drop-sublist li {
   display: block;
   color: #000;
@@ -771,7 +772,6 @@ select:hover {
 .drop-sublist li:not(:last-child) {
   border-bottom: 1px solid #7e9bbd;
 }
-
 .drop-sublist li:hover {
   background-color: #008095;
   color: #fff;
