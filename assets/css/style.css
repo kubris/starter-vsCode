@@ -689,15 +689,6 @@ select:hover {
 
 /* ==== // custom switchbox ==== */
 /* ==== custom select ==== */
-.select__block {
-  margin-bottom: 50px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 30px;
-}
-
 .drop {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2591,6 +2582,54 @@ h3 {
   border: 1px solid #ccc;
 }
 
+/* ==== // sprite.svg ==== */
+.social {
+  margin: 0 auto 50px;
+  padding: 10px 20px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  gap: 15px;
+  list-style: none;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 20px #008095;
+          box-shadow: 0 0 20px #008095;
+}
+
+.social__link {
+  display: inline-block;
+}
+
+.social__icon {
+  width: 40px;
+  height: 40px;
+  fill: #008095;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.social__link:hover .social__icon {
+  fill: lime;
+}
+
+/* --- custom icon hover color --- */
+.social__link:hover .social__icon.ytb {
+  fill: red;
+}
+
+.social__link:hover .social__icon.tlg {
+  fill: blue;
+}
+
+/* ==== // end sprite.svg ==== */
 /* --- header --- */
 /* --- // header ---  */
 /* --- .hero --- */

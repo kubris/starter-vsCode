@@ -516,14 +516,8 @@ select {
 	}
 }
 /* ==== // custom switchbox ==== */
+
 /* ==== custom select ==== */
-.select {
-	&__block {
-		margin-bottom: 50px;
-		display: flex;
-		gap: 30px;
-	}
-}
 .drop {
 	display: flex;
 	gap: 30px;
@@ -604,3 +598,4 @@ select {
 	}
 }
 /* ==== // custom select ==== */
+
