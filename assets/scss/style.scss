@@ -4,15 +4,14 @@
 @import "mixins/mx-font-face";
 
 @import "components/reset";
-
 @import "components/vars";
-
 @import "components/fonts";
+@import "components/common";
 
 
 @import "components/ui-kit";
+@import "components/menu";
 @import "components/buttons";
-@import "components/common";
 @import "components/tabs";
 @import "components/accordion";
 @import "components/swiper";

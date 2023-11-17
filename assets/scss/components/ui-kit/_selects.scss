@@ -1,0 +1,125 @@
+/* --- SELECTS --- */
+
+.select {
+	position: relative;
+
+	/* -- default */
+	&::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+		display: block;
+		width: 12px;
+		height: 12px;
+
+		background-image: url(/assets/images/icons/arrow-bottom.svg);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+		pointer-events: none;
+	}
+
+	&-field {
+		padding: 10px 25px 10px 10px;
+		width: 100%;
+		appearance: none;
+		cursor: pointer;
+	}
+
+	&::-ms-expand {
+		display: none;
+	}
+	/* -- //default */
+
+	/* -- select custom */
+	&-custom {
+		position: relative;
+
+		&__field {
+			position: relative;
+			display: block;
+			padding: 10px;
+			width: 100%;
+			text-align-last: left;
+
+			background-color: #fff;
+			border: 2px solid #7e9bbd;
+			border-radius: 4px;
+			height: 43px;
+
+			font-size: 16px;
+			transition: 0.2s ease-in;
+			user-select:none;
+
+			&::after {
+				content: "";
+				position: absolute;
+				top: 50%;
+				right: 15px;
+				transform: translateY(-50%);
+				display: block;
+				width: 12px;
+				height: 12px;
+
+				background-image: url(/assets/images/icons/arrow-bottom.svg);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center;
+
+				pointer-events: none;
+			}
+
+			&.active,
+			&:focus,
+			&:hover {
+				box-shadow: 0 0 0 1px #38577a, 0 0 10px #7e9bbd;
+			}
+		}
+
+		&__list {
+			display: none;
+			position: absolute;
+			z-index: 1;
+			left: 0;
+			top: 45px;
+
+			width: 100%;
+			font-size: 16px;
+			background-color: #fff;
+			box-shadow: 0 4px 8px rgba(176, 198, 225, 0.6);
+			border-radius: 4px;
+			overflow: hidden;
+
+			&.open {
+				display: block;
+			}
+
+			&-item {
+				padding: 10px;
+				transition: background-color 0.2s ease-in;
+				cursor: pointer;
+
+				&:hover {
+					background-color: #eee;
+				}
+
+				&:first-child {
+					border-radius: 4px 4px 0 0;
+				}
+				&:last-child {
+					border-radius: 0 0 4px 4px;
+				}
+			}
+		}
+
+		&__value {
+			display: none;
+		}
+	}
+	/* -- //select custom */
+}
+
+/* --- // SELECTS --- */

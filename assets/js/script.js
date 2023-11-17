@@ -1,4 +1,4 @@
-// polyfill for forEach
+// === polyfill for forEach
 if (window.NodeList && !NodeList.prototype.forEach) {
 	NodeList.prototype.forEach = function (callback, thisArg) {
 		thisArg = thisArg || window;
@@ -7,6 +7,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 		}
 	};
 }
+// === // polyfill for forEach
 
 // === custom select
 document.querySelectorAll(".select-custom").forEach(function (selectBlock) {
