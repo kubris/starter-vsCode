@@ -116,7 +116,7 @@ svg {
 /* === //reset === */
 :root {
   --textColor: #333;
-  --headColor: inherit;
+  --headColor: #008095;
   --textLightColor: #fff;
   --accentColor: #156a36;
   --mainBgColor: #fff;
@@ -1151,9 +1151,14 @@ select:hover {
   background-color: #008095;
   color: #fff;
   cursor: pointer;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.tabs-tags__tag:hover {
+  background-color: #0e637a;
 }
 .tabs-tags__tag.active {
-  background-color: #008095;
+  background-color: #014a5e;
 }
 .tabs-content {
   padding: 20px;
