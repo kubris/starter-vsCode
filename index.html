@@ -61,39 +61,7 @@
 			<div class="form-fields">
 				<input type="text" placeholder="Your text..." />
 				<textarea placeholder="Here your text..."></textarea>
-			</div>
-			<br />
-			<div class="form-fields">
-				<div class="select">
-					<select class="select-field" name="select">
-						<option value="1">Default Select</option>
-						<option value="2">Select 2</option>
-						<option value="3">Select 3</option>
-					</select>
-				</div>
-
-				<div class="select-custom">
-					<button class="select-custom__field">Custom Select</button>
-					<ul class="select-custom__list">
-						<li class="select-custom__list-item" data-value="sel1" >Custom Select</li>
-						<li class="select-custom__list-item" data-value="sel2">Custom Select I</li>
-						<li class="select-custom__list-item" data-value="sel3">Custom Select II</li>
-						<li class="select-custom__list-item" data-value="sel4">Custom Select III</li>
-					</ul>
-					<input class="select-custom__value" type="text" name="select-value" value="" />
-				</div>
-
-				<div class="select-custom">
-					<button class="select-custom__field">Custom Select 2</button>
-					<ul class="select-custom__list">
-						<li class="select-custom__list-item" data-value="sel2-1">Custom Select 2</li>
-						<li class="select-custom__list-item" data-value="sel2-2">Custom Select 2-I</li>
-						<li class="select-custom__list-item" data-value="sel2-3">Custom Select 2-II</li>
-						<li class="select-custom__list-item" data-value="sel2-4">Custom Select 2-III</li>
-					</ul>
-					<input class="select-custom__value" type="text" name="select-value" value="" />
-				</div>
-			</div>
+			</div>		
 
 			<div class="range">
 				<div class="range-slider">
@@ -162,31 +130,40 @@
 				</div>
 			</div>
 
-			<div class="drop">
-				<ul class="drop-list">
+			<div class="block-wrapper">
+				<ul class="select">
 					<li>
-						<input class="drop-input" value="" placeholder="Select an element" readonly />
-						<i></i>
-						<ul class="drop-sublist">
+						<input class="select-field" value="" placeholder="Custom select" readonly />
+						<span></span>
+						<ul class="select-list">
 							<li>Item I</li>
 							<li>Item II</li>
 							<li>Item III</li>
+						</ul>
+					</li>
+				</ul>
+			
+				<ul class="select">
+					<li>
+						<input class="select-field" value="" placeholder="Custom select" readonly />
+						<span></span>
+						<ul class="select-list">
+							<li>Item A</li>
+							<li>Item B</li>
+							<li>Item C</li>
 						</ul>
 					</li>
 				</ul>
 
-				<ul class="drop-list">
-					<li>
-						<input class="drop-input" value="" placeholder="Select an element" readonly />
-						<i></i>
-						<ul class="drop-sublist">
-							<li>Item I</li>
-							<li>Item II</li>
-							<li>Item III</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+				<div class="select-default"  onclick="turnSelectArrow(this)">
+					<select class="turnSelectArrow" name="select">
+						<option value="0">Default Select</option>
+						<option value="1">Select 1</option>
+						<option value="2">Select 2</option>
+						<option value="3">Select 3</option>
+					</select>
+				</div>
+			</div>			
 
 			<div class="accordion-wrapper">
 				<div class="container">

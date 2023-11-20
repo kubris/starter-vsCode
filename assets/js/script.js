@@ -153,31 +153,106 @@ var tabsManager = new TabsManager(".tabs");
 // === end tabs
 
 // === select field
-if ($(".drop-input")) {
-	$(".drop-input").on("click", function () {
-		$(".drop-input").not(this).siblings(".drop-sublist").slideUp().removeClass("open");
-		$(".drop-input").not(this).removeClass("turn");
+class SelectManager {
+	
+	constructor(containerSelector, selectSelector) {
+		this.container = document.querySelector(containerSelector);
+		this.selectSelector = selectSelector;
+		this.init();
+	}
 
-		$(this).siblings(".drop-sublist").slideToggle("open");
-		$(this).toggleClass("turn");
-	});
+	init() {
+		this.container.addEventListener("click", (e) => {
+			const targetSelect = e.target.closest(this.selectSelector);
+			if (targetSelect) {
+				this.handleSelectClick(targetSelect);
+			} else {
+				this.closeAllSelects();
+			}
+		});
 
-	$(".drop-sublist li").click(function () {
-		var res = $(this).text();
-		$(this).parent().prev().prev(".drop-input").val(res);
-		$(this).parent(".drop-sublist").slideUp().removeClass("open");
-		$(this).parent().prev().prev(".drop-input").removeClass("turn");
-	});
+		document.addEventListener("click", (e) => {
+			if (
+				!e.target.closest(this.selectSelector) &&
+				!e.target.closest(".select-list")
+			) {
+				this.closeAllSelects();
+			}
+		});
+	}
 
-	$(document).on("click", function (e) {
-		if (!$(e.target).closest(".drop-list").length) {
-			$(".drop-sublist").slideUp().removeClass("open");
-			$(".drop-input").removeClass("turn");
+	handleSelectClick(select) {
+		const field = select.querySelector(".select-field");
+		const list = select.querySelector(".select-list");
+
+		this.closeOtherSelects(field);
+
+		list.classList.toggle("open");
+		field.classList.toggle("turn");
+
+		// Отключаем событие, чтобы избежать закрытия при клике на элемент списка
+		list.addEventListener("click", (e) => {
+			e.stopPropagation();
+		});
+
+		const selectItemClickHandler = (e) => {
+			const selectedItem = e.target.closest("li");
+			if (selectedItem) {
+				const result = selectedItem.textContent.trim();
+				field.value = result;
+				list.classList.remove("open");
+				field.classList.remove("turn");
+				list.removeEventListener("click", selectItemClickHandler);
+			}
+		};
+
+		list.addEventListener("click", selectItemClickHandler);
+	}
+
+	closeOtherSelects(clickedField) {
+		var selects = this.container.querySelectorAll(this.selectSelector);
+		for (var i = 0; i < selects.length; i++) {
+			var select = selects[i];
+			var field = select.querySelector(".select-field");
+			var list = select.querySelector(".select-list");
+	
+			if (field && list && field !== clickedField) {
+				// Убедимся, что оба класса существуют перед вызовом classList.remove
+				if (list.classList.contains("open")) {
+					list.classList.remove("open");
+				}
+				if (field.classList.contains("turn")) {
+					field.classList.remove("turn");
+				}
+			}
 		}
-		e.stopPropagation();
-	});
+	};
+
+	closeAllSelects() {
+		let selects = this.container.querySelectorAll(this.selectSelector);
+    for (let i = 0; i < selects.length; i++) {
+        let select = selects[i];
+        const field = select.querySelector(".select-field");
+        const list = select.querySelector(".select-list");
+
+        // Проверяем, что оба класса существуют перед вызовом classList.remove
+        if (list && field) {
+            list.classList.remove("open");
+            field.classList.remove("turn");
+        }
+    }
+	}
 }
+
+// Инициализация объекта SelectManager
+const selectManager = new SelectManager("body", ".select");
 // === end select field
+
+// === select default
+function turnSelectArrow(el) {
+	el.classList.toggle('open');
+}
+// === end select default
 
 // === SWIPER slider
 if ($(".swiper").length !== 0) {

@@ -559,72 +559,165 @@ h3 {
 }
 
 /* --- // .radio --- */
-/* --- SELECTS --- */
+/* ==== custom select ==== */
 .select {
   position: relative;
-  /* -- default */
-  /* -- //default */
-  /* -- select custom */
-  /* -- //select custom */
-}
-.select::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  display: block;
-  width: 12px;
-  height: 12px;
-  background-image: url(/assets/images/icons/arrow-bottom.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  pointer-events: none;
+  width: 100%;
+  max-width: 350px;
+  background: #fff;
 }
 .select-field {
-  padding: 10px 25px 10px 10px;
+  padding: 12px 32px 12px 12px;
   width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1em;
+  color: #000;
+  background-color: unset;
+  border: 2px solid #7e9bbd;
+  border-radius: 4px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.select-field:focus {
+  outline: transparent;
+  -webkit-box-shadow: 0 0 3px #7e9bbd;
+          box-shadow: 0 0 3px #7e9bbd;
+}
+.select-field::-webkit-input-placeholder {
+  font-weight: 400;
+  color: #333;
+}
+.select-field::-moz-placeholder {
+  font-weight: 400;
+  color: #333;
+}
+.select-field:-ms-input-placeholder {
+  font-weight: 400;
+  color: #333;
+}
+.select-field::-ms-input-placeholder {
+  font-weight: 400;
+  color: #333;
+}
+.select-field::placeholder {
+  font-weight: 400;
+  color: #333;
+}
+.select-field + span {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 32px;
+  z-index: 1;
+}
+.select-field + span::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 8px 0 8px;
+  border-color: #008095 transparent transparent transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-shadow: none;
+  pointer-events: none;
+}
+.select-field.turn + span::after {
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent #008095 transparent;
+}
+.select-list {
+  display: none;
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid #7e9bbd;
+  -webkit-animation: fadeIn 0.4s;
+          animation: fadeIn 0.4s;
+  z-index: 10;
+}
+.select-list.open {
+  display: block;
+}
+.select-list li {
+  display: block;
+  padding: 12px 12px 12px 12px;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+.select-list li:not(:last-child) {
+  border-bottom: 1px solid #7e9bbd;
+}
+.select-list li:hover {
+  background-color: #008095;
+  color: #fff;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* ==== // custom select ==== */
+/* ==== select default ==== */
+.select-default {
+  position: relative;
+  max-width: 350px;
+  width: 100%;
+}
+.select-default select {
+  padding: 12px 32px 12px 12px;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1em;
+  color: #000;
+  background-color: unset;
+  border: 2px solid #7e9bbd;
+  border-radius: 4px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  cursor: pointer;
 }
-.select::-ms-expand {
-  display: none;
-}
-.select-custom {
-  position: relative;
-}
-.select-custom__field {
-  position: relative;
-  display: block;
-  padding: 10px;
-  width: 100%;
-  -moz-text-align-last: left;
-       text-align-last: left;
-  background-color: #fff;
-  border: 2px solid #7e9bbd;
-  border-radius: 4px;
-  height: 43px;
-  font-size: 16px;
-  -webkit-transition: 0.2s ease-in;
-  transition: 0.2s ease-in;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-.select-custom__field::after {
+.select-default::after {
   content: "";
   position: absolute;
-  top: 50%;
-  right: 15px;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  right: 10px;
+  top: calc(50% - 6px);
   display: block;
   width: 12px;
   height: 12px;
@@ -634,47 +727,13 @@ h3 {
   background-position: center;
   pointer-events: none;
 }
-.select-custom__field.active, .select-custom__field:focus, .select-custom__field:hover {
-  -webkit-box-shadow: 0 0 0 1px #38577a, 0 0 10px #7e9bbd;
-          box-shadow: 0 0 0 1px #38577a, 0 0 10px #7e9bbd;
-}
-.select-custom__list {
-  display: none;
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  top: 45px;
-  width: 100%;
-  font-size: 16px;
-  background-color: #fff;
-  -webkit-box-shadow: 0 4px 8px rgba(176, 198, 225, 0.6);
-          box-shadow: 0 4px 8px rgba(176, 198, 225, 0.6);
-  border-radius: 4px;
-  overflow: hidden;
-}
-.select-custom__list.open {
-  display: block;
-}
-.select-custom__list-item {
-  padding: 10px;
-  -webkit-transition: background-color 0.2s ease-in;
-  transition: background-color 0.2s ease-in;
-  cursor: pointer;
-}
-.select-custom__list-item:hover {
-  background-color: #eee;
-}
-.select-custom__list-item:first-child {
-  border-radius: 4px 4px 0 0;
-}
-.select-custom__list-item:last-child {
-  border-radius: 0 0 4px 4px;
-}
-.select-custom__value {
-  display: none;
+.select-default.open::after {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
-/* --- // SELECTS --- */
+/* ==== // select default ==== */
 /* ==== custom price range ==== */
 .range {
   margin-top: 25px;
@@ -934,87 +993,6 @@ h3 {
 }
 
 /* ==== // custom switchbox ==== */
-/* ==== custom drop select ==== */
-.drop {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 30px;
-  padding: 20px 0 40px;
-}
-.drop-list {
-  position: relative;
-  width: 100%;
-  max-width: 350px;
-  background: #fff;
-}
-.drop-input {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 15px 15px 15px 45px;
-  font-family: inherit;
-  font-size: 18px;
-  font-weight: 400;
-  border-bottom: 1px solid #7e9bbd;
-  color: #222;
-  cursor: pointer;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  z-index: 1;
-}
-.drop-input + i {
-  content: "";
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  right: 10px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 8px 8px 0 8px;
-  border-color: #008095 transparent transparent transparent;
-  pointer-events: none;
-  z-index: 1;
-}
-.drop-input.turn + i {
-  border-width: 0 8px 8px 8px;
-  border-color: transparent transparent #008095 transparent;
-}
-.drop-sublist {
-  display: none;
-  position: absolute;
-  top: 43px;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  border: 2px solid #7e9bbd;
-  z-index: 10;
-}
-.drop-sublist.open {
-  display: block;
-}
-.drop-sublist li {
-  display: block;
-  color: #000;
-  font-weight: 400;
-  padding: 12px 12px 12px 45px;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
-  cursor: pointer;
-}
-.drop-sublist li:not(:last-child) {
-  border-bottom: 1px solid #7e9bbd;
-}
-.drop-sublist li:hover {
-  background-color: #008095;
-  color: #fff;
-}
-
-/* ==== // custom drop select ==== */
 .form-fields {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1027,6 +1005,15 @@ h3 {
           flex-direction: column;
   gap: 20px;
   max-width: 400px;
+}
+
+.block-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 30px;
+  padding: 20px 0 40px;
 }
 
 input {
