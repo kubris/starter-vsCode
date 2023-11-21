@@ -129,6 +129,19 @@ h3 {
 	align-items: start;
 }
 /* --- additional --- */
+.no-scroll {
+	overflow: hidden;
+	&::after {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: 10;
+		background-color: #000000ee;
+	}
+}
 .v-hidden {
 	position: absolute;
 	z-index: -1000;

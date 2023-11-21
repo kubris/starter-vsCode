@@ -595,3 +595,59 @@ if (".accordion") {
 	});
 }
 // === end ACCORDION
+
+// === POPUP
+class PopupHandler {
+	constructor(popupBtns, popupWindow, popupCloseBtn) {
+		const popupBtnsElements = document.querySelectorAll(popupBtns);
+		const popupElement = document.querySelector(popupWindow);
+		const popupCloseElements = document.querySelectorAll(popupCloseBtn);
+
+		if (popupBtnsElements.length && popupElement && popupCloseElements.length) {
+			this.popupBtnsListener = popupBtnsElements;
+			this.popup = popupElement;
+			this.popupClose = popupCloseElements;
+
+			this.initializeEvents();
+		}
+	}
+
+	initializeEvents() {
+		this.popupBtnsListener.forEach((btn) => {
+			btn.addEventListener("click", () => {
+				this.showPopup();
+			});
+		});
+
+		this.popupClose.forEach((btnClose) => {
+			btnClose.addEventListener("click", () => {
+				this.hidePopup();
+			});
+		});
+	}
+
+	showPopup() {
+		this.popup.classList.add("show");
+		document.querySelector("html").classList.add("no-scroll");
+	}
+
+	hidePopup() {
+		this.popup.classList.remove("show");
+		document.querySelector("html").classList.remove("no-scroll");
+	}
+}
+
+// Init popup
+const loginPopup = new PopupHandler(
+	".jsLogin", // open-popup buttons class
+	".popup-login", // popup window class
+	".popup-close" // popup close button class
+);
+
+const registerPopup = new PopupHandler(
+	".jsRegister",
+	".popup-register",
+	".popup-close"
+);
+
+// === end POPUP

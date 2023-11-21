@@ -1,0 +1,150 @@
+/* ==== popup ==== */
+.popup-call__buttons {
+	margin-bottom: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	align-items: center;
+}
+
+.popup {
+	display: none;
+	position: fixed;
+	padding: 40px 55px;
+	min-height: 645px;
+	max-width: 532px;
+	width: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 100;
+
+	background-color: rgba(0, 71, 82, 0.7);
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.popup.show {
+	display: block;
+	-webkit-animation: showPopup 0.5s;
+	animation: showPopup 0.5s;
+}
+
+.popup-close {
+	position: absolute;
+	top: 40px;
+	right: 40px;
+	background-color: unset;
+	color: #fff;
+	font-size: 20px;
+	cursor: pointer;
+}
+.popup-logo {
+	padding: 40px 0 20px;
+	text-align: center;
+	font-size: 72px;
+	color: #fff;
+}
+.popup-logo img {
+	width: 100px;
+}
+.popup-input {
+	margin-bottom: 20px;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	gap: 20px;
+	color: #fff;
+	font-size: 24px;
+	vertical-align: top;
+}
+.popup-input input {
+	padding: 10px;
+	background-color: unset;
+	width: 100%;
+	color: inherit;
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: -0.4px;
+}
+.popup-input input + input {
+	margin-top: 20px;
+}
+.popup-input input::placeholder {
+	color: #fff;
+	font-weight: 200;
+}
+/* 
+.popup-input span {
+	width: 38px;
+	height: 38px; 
+}
+.popup-input span img {
+	display: block;
+}
+*/
+.popup-btn {
+	margin: 35px 0 30px;
+}
+.popup .checkbox {
+	text-align: left;
+}
+.popup-links {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 1.4;
+	letter-spacing: -0.4px;
+	text-transform: uppercase;
+}
+.popup-links a {
+	position: relative;
+}
+.popup-links a + a {
+	margin-left: 17px;
+}
+.popup-links a:first-child::after {
+	content: "";
+	position: absolute;
+	top: 5px;
+	right: -11px;
+	display: block;
+	width: 1px;
+	height: 16px;
+	background-color: #fff;
+}
+
+@-webkit-keyframes showPopup {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes showPopup {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@media (max-width: 575px) {
+	.popup {
+		min-height: unset;
+		max-width: 90%;
+		padding: 30px 25px 55px;
+
+		&-close {
+			top: 20px;
+			right: 20px;
+		}
+	}
+}
+/* ==== // popup ==== */
