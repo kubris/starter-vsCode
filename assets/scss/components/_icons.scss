@@ -1,0 +1,69 @@
+/* ==== // sprite.svg ==== */
+  .social {
+	margin: 0 auto 50px;
+	padding: 10px 20px;
+	display: inline-flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 15px;  
+	list-style: none;
+	border-radius: 15px;
+	box-shadow: 0 0 20px #008095;
+  }
+  .social__link {
+	display: inline-block;
+  }
+  .social__icon {
+	width: 40px;
+	height: 40px;
+	fill: #008095;
+	transition: .2s;
+  }
+  .social__link:hover .social__icon {
+	fill: lime;
+  }
+  /* --- custom icon hover color --- */
+  .social__link:hover .social__icon.ytb{
+	fill: red;
+  }
+  .social__link:hover .social__icon.tlg{
+	fill: blue;
+  }
+/* ==== // end sprite.svg ==== */
+
+/* ==== Icon Font Icomoon ==== */
+.ico-list {
+	margin: 20px auto 50px;
+	padding: 10px 20px;
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: 15px;
+	border-radius: 15px;
+	box-shadow: 0 0 20px #008095;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #008095;
+		transition: background-color 0.4s;
+
+		&:hover {
+			background-color: #004954;
+		}
+	}
+
+	&__link {
+		vertical-align: middle;
+		line-height: 1;
+		color: #fff;
+
+		i {
+			font-size: 22px;
+		}
+	}
+}
+/* ==== end Icon Font Icomoon ==== */
