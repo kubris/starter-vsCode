@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Quiz</title>
+		<link rel="stylesheet" href="assets/css/style.min.css" />
+	</head>
+	<body>
+		<section id="quiz" class="quiz">
+			<div class="quiz-questions" id="quizQuestions"></div>
+
+			<div class="quiz-indicator" id="quizIndicator">1/10</div>
+
+			<div class="quiz-results" id="quizResults"></div>
+
+			<div class="quiz-controls">
+				<button class="btn btn-restart" id="quizRestart">В начало</button>
+				<button class="btn btn-next" id="quizNext" disabled>Далее</button>
+			</div>
+		</section>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="assets/js/quiz.js"></script>
+	</body>
+</html>

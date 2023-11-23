@@ -154,7 +154,6 @@ var tabsManager = new TabsManager(".tabs");
 
 // === select field
 class SelectManager {
-	
 	constructor(containerSelector, selectSelector) {
 		this.container = document.querySelector(containerSelector);
 		this.selectSelector = selectSelector;
@@ -172,10 +171,7 @@ class SelectManager {
 		});
 
 		document.addEventListener("click", (e) => {
-			if (
-				!e.target.closest(this.selectSelector) &&
-				!e.target.closest(".select-list")
-			) {
+			if (!e.target.closest(this.selectSelector) && !e.target.closest(".select-list")) {
 				this.closeAllSelects();
 			}
 		});
@@ -215,7 +211,7 @@ class SelectManager {
 			var select = selects[i];
 			var field = select.querySelector(".select-field");
 			var list = select.querySelector(".select-list");
-	
+
 			if (field && list && field !== clickedField) {
 				// Убедимся, что оба класса существуют перед вызовом classList.remove
 				if (list.classList.contains("open")) {
@@ -226,21 +222,21 @@ class SelectManager {
 				}
 			}
 		}
-	};
+	}
 
 	closeAllSelects() {
 		let selects = this.container.querySelectorAll(this.selectSelector);
-    for (let i = 0; i < selects.length; i++) {
-        let select = selects[i];
-        const field = select.querySelector(".select-field");
-        const list = select.querySelector(".select-list");
+		for (let i = 0; i < selects.length; i++) {
+			let select = selects[i];
+			const field = select.querySelector(".select-field");
+			const list = select.querySelector(".select-list");
 
-        // Проверяем, что оба класса существуют перед вызовом classList.remove
-        if (list && field) {
-            list.classList.remove("open");
-            field.classList.remove("turn");
-        }
-    }
+			// Проверяем, что оба класса существуют перед вызовом classList.remove
+			if (list && field) {
+				list.classList.remove("open");
+				field.classList.remove("turn");
+			}
+		}
 	}
 }
 
@@ -250,7 +246,7 @@ const selectManager = new SelectManager("body", ".select");
 
 // === select default
 function turnSelectArrow(el) {
-	el.classList.toggle('open');
+	el.classList.toggle("open");
 }
 // === end select default
 
@@ -644,10 +640,6 @@ const loginPopup = new PopupHandler(
 	".popup-close" // popup close button class
 );
 
-const registerPopup = new PopupHandler(
-	".jsRegister",
-	".popup-register",
-	".popup-close"
-);
+const registerPopup = new PopupHandler(".jsRegister", ".popup-register", ".popup-close");
 
 // === end POPUP

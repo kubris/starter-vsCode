@@ -128,6 +128,13 @@ h3 {
 	flex-direction: column;
 	align-items: start;
 }
+.d {
+	&-none { display: none !important }
+	&-flex { display: flex !important }
+	&-iflex { display: inline-flex !important }
+	&-block { display: block !important }
+	&-iblock { display: inline-block !important }
+}
 /* --- additional --- */
 .no-scroll {
 	overflow: hidden;

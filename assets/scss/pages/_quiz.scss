@@ -1,0 +1,55 @@
+/* --- start quiz --- */
+.quiz {
+	margin: 0 auto;
+	max-width: 600px;
+	width: 100%;
+
+	&-questions {
+		margin-bottom: 20px;
+
+		&__item {
+			
+			&-ask {
+				margin: 20px 0;
+				font-size: 20px;
+				font-weight: 600;
+			}
+
+			&-answer {
+			}
+		}
+	}
+
+	&-indicator {
+		margin-bottom: 20px;
+		font-weight: 600;
+	}
+
+	&-results {
+		display: none;
+		margin-bottom: 20px;
+
+		&__item {
+
+			&-ask {
+				margin: 20px 0 10px;
+				font-weight: 600;
+				font-size: 1.1em;
+			}
+		}
+	}
+
+	&--invalid {
+		color: red;
+	}
+
+	&--valid {
+		color: green;
+	}
+}
+
+.btn-restart {
+	display: none;
+}
+
+.btn-next {}

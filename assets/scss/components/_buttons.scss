@@ -1,8 +1,31 @@
 /* --- buttons  --- */
 .btn {
 	display: inline-flex;
-	border-radius: 20px;
-	transition: all 0.2s ease-out;
+	align-items: center;
+	justify-content: center;
+	height: 45px;
+	max-width: 160px;
+	width: 100%;
+
+	font-family: inherit;
+	font-size: 16px;
+	line-height: 1;
+	text-transform: uppercase;
+	font-weight: 500;
+	color: var(--textLightColor);
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	user-select: none;
+	border: 1px solid var(--accentColor);
+	border-radius: 12px;
+	background-color: var(--accentColor);
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+	&:disabled {
+		filter: contrast(0.5);
+	}
 }
 .btn:hover {
 	background-position: 0 -20px;
@@ -52,7 +75,7 @@
 }
 
 // temp style
-button[type="submit"] {
+.popup button[type="submit"] {
 	pointer-events: none;
 }
 /* --- // buttons --- */
